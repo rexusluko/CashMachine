@@ -6,7 +6,13 @@
 # Running the Application
 Navigate to the `myshop` directory and execute:
 ```
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver {YOUR_IP}:8000
+```
+and create superuser
+```
+python manage.py createsuperuser
 ```
 
 # Working with the Application
