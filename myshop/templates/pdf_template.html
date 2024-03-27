@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Чек</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Чек</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th>Общее количество</th>
+                <th>Общая стоимость</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.0.title }}</td>
+                    <td>{{ item.2 }}</td>
+                    <td>{{ item.1 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Итоговая сумма:</td>
+                <td>{{ total_amount }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">Время создания чека:</td>
+                <td>{{ creation_time }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
